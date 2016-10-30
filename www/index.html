@@ -16,7 +16,6 @@
 		function init() {		
 			console.log('SMGROUP ::::::::::::::::::::::::::::::::::::    start init()');
 			document.addEventListener("deviceready", onDeviceReady, false);
-
 		}
 		/*
 		$(document).ready(function(){
@@ -30,9 +29,17 @@
 		*/
 
 		function onDeviceReady() {
+			if(window.localStorage.getItem('uuid') == null)
+				window.plugins.uniqueDeviceID.get(uniqueDeviceIDsuccess_index, uniqueDeviceIDfail_index);
+			else
+			{
+				
+			}
 			register_notification_home();		
 
 			
+			
+			window.location = "http://qasednews.ir/new/";
 		}
 		function need_internet(){
 			if(does_we_have_intenet)
