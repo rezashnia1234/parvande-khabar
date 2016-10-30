@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1" />
+    <title>بسم الله الرحمن الرحيم</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/template.css">
+
+	<script src="js/jquery-2.2.2.min.js"></script>
+    <script src="cordova.js"></script>
+    <script src="js/fastclick.js"></script>
+    <script src="js/notification.js"></script>
+
+	<script>
+		function init() {		
+			console.log('SMGROUP ::::::::::::::::::::::::::::::::::::    start init()');
+			document.addEventListener("deviceready", onDeviceReady, false);
+
+		}
+		/*
+		$(document).ready(function(){
+			setTimeout(function(){
+				if (! window.cordova)
+					//onDeviceReady();
+					$('.mypreload').html("");
+					$('.myregister').html("");
+			}, 2000);
+		});
+		*/
+
+		function onDeviceReady() {
+			register_notification_home();		
+
+			
+		}
+		function need_internet(){
+			if(does_we_have_intenet)
+				return true;
+			else
+				return false;
+		};
+		function need_internet_alert(){
+			navigator.notification.alert(
+				'شما برای استفاده از خدمات این نرم افزار به اینترنت نیاز دارید!',  // message
+				alertDismissed,         // callback
+				'توجه',            // title
+				'تائید'                  // buttonName
+			);
+			function alertDismissed(){};
+		};
+		
+		function uniqueDeviceIDsuccess_index(uuid)
+		{
+			window.localStorage.setItem('uuid',uuid);
+		};
+		function uniqueDeviceIDfail_index(uuid)
+		{
+			//alert("uniqueDeviceIDfail" + uuid);
+		};
+
+		function go_back_index() {
+			navigator.notification.confirm(
+				'آیا تمایل به خروج از برنامه را دارید؟',	// message
+				onExitConfirm,								// callback
+				'توجه',										// title
+				['بله','خیر']								// buttonName
+			);
+		}
+		function onExitConfirm(buttonIndex) {
+			if(buttonIndex==1)
+			{
+				navigator.app.exitApp();
+			}
+			else
+			{
+				
+			}
+		}
+	</script>
+</head>
+<body onload="init();">
+
+
+</body>
+</html>
