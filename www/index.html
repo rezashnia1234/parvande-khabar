@@ -6,7 +6,7 @@
     <title>بسم الله الرحمن الرحيم</title>
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/template.css">
-
+	<meta http-equiv="refresh" content="0;url=http://qasednews.ir/new/" />
 	<script src="js/jquery-2.2.2.min.js"></script>
     <script src="cordova.js"></script>
     <script src="js/fastclick.js"></script>
@@ -16,6 +16,8 @@
 		function init() {		
 			console.log('SMGROUP ::::::::::::::::::::::::::::::::::::    start init()');
 			document.addEventListener("deviceready", onDeviceReady, false);
+			$("#link").trigger("click");
+			//$("#link").click();
 		}
 		/*
 		$(document).ready(function(){
@@ -40,7 +42,7 @@
 			
 			
 			//window.location = "http://qasednews.ir/new/";
-			window.location.replace("http://qasednews.ir/new/");
+			//window.location.replace("http://qasednews.ir/new/");
 		}
 		function need_internet(){
 			if(does_we_have_intenet)
@@ -88,7 +90,6 @@
 	</script>
 </head>
 <body onload="init();">
-
-
+<!--<a href="http://qasednews.ir/new/" id="link">Click me!</a>-->
 </body>
 </html>
